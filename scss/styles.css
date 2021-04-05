@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+/*variables*/
+/*mixin*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-image: url(" https://source.unsplash.com/random");
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#root .popup {
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  border-radius: 25px;
+}
+#root .popup ::-webkit-scrollbar {
+  width: 10px;
+}
+#root .popup ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+#root .popup ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+#root .popup ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+#root .popup ul li {
+  list-style-type: none;
+}
+@media screen and (max-width: 1200px) {
+  #root .popup ul li > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #root .popup ul li > div span.vendor-name {
+    max-width: inherit !important;
+    /*not advised to use, but here should be*/
+    text-align: center;
+  }
+}
+#root .popup .accept-btn {
+  color: #fff;
+  background-color: #86e02c;
+  border-radius: 5px;
+  border: 1px solid #86e02c;
+}
+#root .popup .accept-btn:hover {
+  background-color: #fff;
+  color: #66bb12;
+  border: 1px solid #66bb12;
+}
+#root .popup .reject-btn {
+  color: #fff;
+  background-color: #db5a33;
+  border-radius: 5px;
+  border: 1px solid #db5a33;
+}
+#root .popup .reject-btn:hover {
+  background-color: #fff;
+  color: #e0720b;
+  border: 1px solid #e0720b;
+}
+#root .popup a {
+  border: 1px solid #2719dfa9;
+  background: #fff;
+  color: #2719dfa9;
+}
+#root .popup a:hover {
+  border: 1px solid #10078aa9;
+  color: #fff;
+  background-color: #10078aa9;
+}/*# sourceMappingURL=styles.css.map */

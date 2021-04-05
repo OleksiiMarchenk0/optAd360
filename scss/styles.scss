@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+/*variables*/
+$accept: #86e02c;
+$acceptHover: #66bb12;
+$reject: #db5a33;
+$rejectHover: #e0720b;
+$link: #2719dfa9;
+$linkHover: #10078aa9;
+
+/*mixin*/
+@mixin buttons($type, $color, $hoverColor) {
+  .#{$type}-btn {
+    color: #fff;
+    background-color: #{$color};
+    border-radius: 5px;
+    border: 1px solid #{$color};
+    &:hover {
+      background-color: #fff;
+      color: #{$hoverColor};
+      border: 1px solid #{$hoverColor};
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-image: url(" https://source.unsplash.com/random");
+  width: 100vw;
+  height: 100vh;
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .popup {
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 5px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    border-radius: 25px;
+    ul {
+      li {
+        list-style-type: none;
+        > div {
+          @media screen and (max-width: 1200px) {
+            flex-direction: column;
+            span.vendor-name {
+              max-width: inherit !important; /*not advised to use, but here should be*/
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+    @include buttons("accept", $accept, $acceptHover);
+    @include buttons("reject", $reject, $rejectHover);
+    a {
+      border: 1px solid $link;
+      background: #fff;
+      color: $link;
+      &:hover {
+        border: 1px solid $linkHover;
+        color: #fff;
+        background-color: $linkHover;
+      }
+    }
+  }
+}
